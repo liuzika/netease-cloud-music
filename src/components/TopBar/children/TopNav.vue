@@ -2,33 +2,51 @@
   <ul class="m-nav j-tflag">
     <li class="fst">
       <span>
-        <router-link to="/home" @click.native="changeSubNav(true)" active-class='z-slt' hidefocus="true"><em>发现音乐</em><sub class="cor">&nbsp;</sub></router-link>
+        <router-link to="/m" active-class='z-slt' hidefocus="true">
+          <em>发现音乐</em>
+          <sub class="cor">&nbsp;</sub>
+        </router-link>
       </span>
     </li>
     <li>
       <span>
-        <router-link to="/my" @click.native="changeSubNav(false)" active-class='z-slt' hidefocus="true"><em>我的音乐</em><sub class="cor">&nbsp;</sub></router-link>
+        <router-link to="/my" active-class='z-slt' hidefocus="true">
+          <em>我的音乐</em>
+          <sub class="cor">&nbsp;</sub>
+        </router-link>
       </span>
     </li>
     <li>
       <span>
-        <router-link to="/friend" @click.native="changeSubNav(false)" active-class='z-slt' hidefocus="true"><em>朋友</em><sub class="cor">&nbsp;</sub><i class="dot j-t" style="display:none;"></i></router-link>
+        <router-link to="/friend" active-class='z-slt' hidefocus="true">
+          <em>朋友</em>
+          <sub class="cor">&nbsp;</sub>
+          <i class="dot j-t" style="display:none;"></i>
+        </router-link>
       </span>
     </li>
     <li>
       <span>
-        <a href="https://music.163.com/store/product" hidefocus="true" target="_blank"><em>商城</em></a>
+        <a href="https://music.163.com/store/product" hidefocus="true" target="_blank">
+          <em>商城</em>
+        </a>
       </span>
     </li>
     <li>
       <span>
-        <a href="https://music.163.com/st/musician" hidefocus="true" target="_blank"><em>音乐人</em></a>
+        <a href="https://music.163.com/st/musician" hidefocus="true" target="_blank">
+          <em>音乐人</em>
+        </a>
       </span>
     </li>
     <li class="lst">
       <span>
-        <router-link to="/download" @click.native="changeSubNav(false)" active-class='z-slt' id="topbar-download-link" hidefocus="true"><em>下载客户端</em><sub class="cor">&nbsp;</sub></router-link>
-      </span><sup class="hot">&nbsp;</sup>
+        <router-link to="/download" active-class='z-slt' id="topbar-download-link" hidefocus="true">
+          <em>下载客户端</em>
+          <sub class="cor">&nbsp;</sub>
+        </router-link>
+      </span>
+      <sup class="hot">&nbsp;</sup>
     </li>
   </ul>
 </template>
@@ -36,12 +54,6 @@
 <script>
 export default {
   name: "TopNav",
-  methods: {
-    changeSubNav(bool) {
-      console.log(123);
-      this.$emit("changeSubNav", bool);
-    },
-  },
 };
 </script>
 

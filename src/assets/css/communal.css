@@ -11,10 +11,6 @@
   *zoom: 1;
 }
 
-.f-alpha {
-  _behavior: url(http://music.163.com/style/css/iepngfix.htc);
-}
-
 .f-ib {
   display: inline-block;
   *display: inline;

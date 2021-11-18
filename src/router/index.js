@@ -6,12 +6,43 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/m'
   },
   {
-    path: '/home',
-    component: () => import('@/views/FindMusic/FindMusic.vue')
+    path: '/m',
+    component: () => import('@/views/FindMusic/Home.vue'),
+    children: [
+      {
+        path: '',
+        redirect: 'discover'
+      },
+      {
+        path: 'discover',
+        component: () => import('@/views/FindMusic/Discover.vue'),
+      },
+      {
+        path: 'toplist',
+        component: () => import('@/views/FindMusic/TopList.vue'),
+      },
+      {
+        path: 'playlist',
+        component: () => import('@/views/FindMusic/PlayList.vue'),
+      },
+      {
+        path: 'djradio',
+        component: () => import('@/views/FindMusic/AnchorStation.vue'),
+      },
+      {
+        path: 'artist',
+        component: () => import('@/views/FindMusic/Singer.vue'),
+      },
+      {
+        path: 'album',
+        component: () => import('@/views/FindMusic/NewDisc.vue'),
+      },
+    ]
   },
+
   {
     path: '/my',
     component: () => import('@/views/MyMusic/MyMusic.vue')
@@ -30,7 +61,7 @@ const routes = [
   },
   {
     path: '/download',
-    component: () => import('@/views/DlSw/DlSw.vue')
+    component: () => import('@/views/DownloadPage/DownloadPage.vue')
   }
 ]
 
