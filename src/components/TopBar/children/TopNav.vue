@@ -2,7 +2,7 @@
   <ul class="m-nav j-tflag">
     <li class="fst">
       <span>
-        <router-link to="/m" active-class='z-slt' hidefocus="true">
+        <router-link to="/m" active-class='slt' hidefocus="true">
           <em>发现音乐</em>
           <sub class="cor">&nbsp;</sub>
         </router-link>
@@ -10,7 +10,7 @@
     </li>
     <li>
       <span>
-        <router-link to="/my" active-class='z-slt' hidefocus="true">
+        <router-link to="/my" active-class='slt' hidefocus="true">
           <em>我的音乐</em>
           <sub class="cor">&nbsp;</sub>
         </router-link>
@@ -18,7 +18,7 @@
     </li>
     <li>
       <span>
-        <router-link to="/friend" active-class='z-slt' hidefocus="true">
+        <router-link to="/friend" active-class='slt' hidefocus="true">
           <em>朋友</em>
           <sub class="cor">&nbsp;</sub>
           <i class="dot j-t" style="display:none;"></i>
@@ -41,7 +41,7 @@
     </li>
     <li class="lst">
       <span>
-        <router-link to="/download" active-class='z-slt' id="topbar-download-link" hidefocus="true">
+        <router-link to="/download" active-class='slt' id="topbar-download-link" hidefocus="true">
           <em>下载客户端</em>
           <sub class="cor">&nbsp;</sub>
         </router-link>
@@ -82,12 +82,12 @@ export default {
       line-height: 70px;
       color: #ccc;
       &:hover,
-      &.z-slt {
+      &.slt {
         background: #000;
         text-decoration: none;
         color: #fff;
       }
-      &.z-slt .cor {
+      &.slt .cor {
         display: block;
         position: absolute;
         left: 50%;
@@ -129,7 +129,7 @@ export default {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .m-nav a.z-slt .cor {
+  .m-nav a.slt .cor {
     top: 64px;
     background-position: -105px -70px;
     background-size: 120px auto;

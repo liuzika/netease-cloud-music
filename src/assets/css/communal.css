@@ -1,3 +1,12 @@
+.container {
+  width: 980px;
+  min-height: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-width: 0 1px;
+}
+
 /* 清楚浮动 */
 .f-cb:after {
   clear: both;

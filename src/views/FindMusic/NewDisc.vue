@@ -1,13 +1,13 @@
 <template>
-  <div class="newdis-container">
+  <div class="newdis-container container">
     <div class="new-wrap n-alblist f-pr">
-      <DisHeader title="热门新碟" :isMore="false" fSize="24px" height="40px"></DisHeader>
+      <PubHeader title="热门新碟" :isMore="false" fSize="24px" height="40px"></PubHeader>
       <ul class="m-cvrlst">
         <li v-for="i in 10" :key="i">
           <NewDish></NewDish>
         </li>
       </ul>
-      <DisHeader title="全部新碟" :isMore="false" fSize="24px" height="40px">
+      <PubHeader title="全部新碟" :isMore="false" fSize="24px" height="40px">
         <div class="tab" slot="tab">
           <a href="/discover/album/#/?area=ALL" class="s-fc6">全部</a><span class="line">|</span>
           <a href="/discover/album/#/?area=ZH" class="s-fc3">华语</a><span class="line">|</span>
@@ -15,7 +15,7 @@
           <a href="/discover/album/#/?area=KR" class="s-fc3">韩国</a><span class="line">|</span>
           <a href="/discover/album/#/?area=JP" class="s-fc3">日本</a>
         </div>
-      </DisHeader>
+      </PubHeader>
       <ul class="m-cvrlst">
         <li v-for="i in 35" :key="i">
           <NewDish></NewDish>
@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import DisHeader from "@/components/DisHeader/DisHeader";
+import PubHeader from "@/components/PubHeader/PubHeader";
 import NewDish from "@/components/NewDish/NewDish";
 
 export default {
   name: "NewDisc",
   components: {
-    DisHeader,
+    PubHeader,
     NewDish,
   },
 };
@@ -46,12 +46,6 @@ export default {
 
 <style lang='less'>
 .newdis-container {
-  width: 980px;
-  min-height: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #d3d3d3;
-  border-width: 0 1px;
   .new-wrap {
     padding: 40px;
     .m-cvrlst {

@@ -4,12 +4,12 @@
     <Banner></Banner>
 
     <!-- 主体 -->
-    <div class="discover-container g-bd1 f-cb">
+    <div class="discover-container container f-cb">
       <div class="g-mn1">
         <div class="g-mn1c">
           <div class="g-wrap3">
             <div class="n-rcmd">
-              <DisHeader :isIconDot="true" :isLink="true" title="热门推荐">
+              <PubHeader :isIconDot="true" :isLink="true" title="热门推荐">
                 <div class="tab" slot="tab">
                   <a href="/discover/playlist/?cat=%E5%8D%8E%E8%AF%AD" class="s-fc3">华语</a>
                   <span class="line">|</span>
@@ -21,7 +21,7 @@
                   <span class="line">|</span>
                   <a href="/discover/playlist/?cat=%E7%94%B5%E5%AD%90" class="s-fc3">电子</a>
                 </div>
-              </DisHeader>
+              </PubHeader>
               <ul class="m-cvrlst f-cb">
                 <li>
                   <div class="u-cover u-cover-1">
@@ -161,7 +161,7 @@
               <div class="j-flag f-hide" id="auto-id-Z5dVOiU4LqMBTni3"></div>
             </div>
             <div class="n-new">
-              <DisHeader title="新碟上架" :isLink="true" :isIconDot="true"></DisHeader>
+              <PubHeader title="新碟上架" :isLink="true" :isIconDot="true"></PubHeader>
               <div class="n-disk">
                 <div class="inner" id="album-roller">
                   <a hidefocus="true" href="#" class="click-flag pre s-bg s-bg-7 f-tdn">&nbsp;</a>
@@ -182,7 +182,7 @@
               </div>
             </div>
             <div class="n-bill">
-              <DisHeader title="榜单" :isLink="true" :isIconDot="true"></DisHeader>
+              <PubHeader title="榜单" :isLink="true" :isIconDot="true"></PubHeader>
               <div class="n-bilst" id="top-flag">
                 <dl class="blk">
                   <dt class="top">
@@ -668,36 +668,20 @@
 // 轮播图
 import Banner from "@/components/Banner/Banner";
 // 各列表标题
-import DisHeader from "@/components/DisHeader/DisHeader";
+import PubHeader from "@/components/PubHeader/PubHeader";
 import NewDish from "@/components/NewDish/NewDish";
 
 export default {
   name: "Discover",
   components: {
     Banner,
-    DisHeader,
+    PubHeader,
     NewDish,
   },
 };
 </script>
 
 <style lang='less'>
-.g-bd,
-.g-bd1,
-.g-bd2,
-.g-bd3,
-.g-bd4,
-.g-bd5,
-.g-bd6,
-.g-bd7 {
-  width: 980px;
-  min-height: 700px;
-  _height: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #d3d3d3;
-  border-width: 0 1px;
-}
 .discover-container {
   .s-bg,
   .n-disk li {

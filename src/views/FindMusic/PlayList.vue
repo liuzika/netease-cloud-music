@@ -1,7 +1,7 @@
 <template>
-  <div class="playlist-container" id="m-disc-pl-c">
+  <div class="playlist-container container">
     <div class="playlist-wrap p-pl f-pr">
-      <DisHeader title="全部" fSize='24px' height="40px" :isMore="false"></DisHeader>
+      <PubHeader title="全部" fSize='24px' height="40px" :isMore="false"></PubHeader>
       <div class="u-title f-cb">
         <h3><span class="f-ff2 d-flag">全部</span><a href="javascript:;" class="u-btn2 u-btn2-1 menu d-flag" id="cateToggleLink"><i>选择分类<em class="u-icn u-icn-38"></em></i></a></h3>
         <div class="u-btn f-fr u-btn-hot d-flag">
@@ -134,13 +134,13 @@
 </template>
 
 <script>
-import DisHeader from "@/components/DisHeader/DisHeader";
+import PubHeader from "@/components/PubHeader/PubHeader";
 import SongSheet from "@/components/SongSheet/SongSheet";
 
 export default {
   name: "PlayList",
   components: {
-    DisHeader,
+    PubHeader,
     SongSheet,
   },
 };
@@ -148,12 +148,6 @@ export default {
 
 <style lang='less'>
 .playlist-container {
-  width: 980px;
-  min-height: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #d3d3d3;
-  border-width: 0 1px;
   .playlist-wrap {
     padding: 40px;
     .cvrlst {

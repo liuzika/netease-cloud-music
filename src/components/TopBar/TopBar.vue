@@ -26,22 +26,22 @@
         <div class="wrap f-pr">
           <ul class="nav">
             <li>
-              <router-link to="/m/discover" hidefocus="true" active-class="z-slt"><em>推荐</em></router-link>
+              <router-link to="/m/discover" hidefocus="true" active-class="slt"><em>推荐</em></router-link>
             </li>
             <li>
-              <router-link to="/m/toplist" active-class="z-slt" hidefocus="true"><em>排行榜</em></router-link>
+              <router-link to="/m/toplist" active-class="slt" hidefocus="true"><em>排行榜</em></router-link>
             </li>
             <li>
-              <router-link to="/m/playlist" active-class="z-slt" hidefocus="true"><em class="f-pr" style="padding: 0 15px 0 11px;">歌单<span class="f-pa f-r-white-icon" style="display:inline-block;width:8px;height:8px;top:2px;background-size:cover;"></span></em></router-link>
+              <router-link to="/m/playlist" active-class="slt" hidefocus="true"><em class="f-pr" style="padding: 0 15px 0 11px;">歌单<span class="f-pa f-r-white-icon" style="display:inline-block;width:8px;height:8px;top:2px;background-size:cover;"></span></em></router-link>
             </li>
             <li>
-              <router-link to="/m/djradio" active-class="z-slt" hidefocus="true"><em>主播电台</em></router-link>
+              <router-link to="/m/djradio" active-class="slt" hidefocus="true"><em>主播电台</em></router-link>
             </li>
             <li>
-              <router-link to="/m/artist" active-class="z-slt" hidefocus="true"><em>歌手</em></router-link>
+              <router-link to="/m/artist" active-class="slt" hidefocus="true"><em>歌手</em></router-link>
             </li>
             <li>
-              <router-link to="/m/album" active-class="z-slt" hidefocus="true"><em>新碟上架</em></router-link>
+              <router-link to="/m/album" active-class="slt" hidefocus="true"><em>新碟上架</em></router-link>
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ export default {
 <style lang='less'>
 .topbar-container {
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   .g-topbar {
     position: relative;
     left: 0;
@@ -174,12 +174,12 @@ export default {
             line-height: 21px;
           }
           &:hover,
-          &.z-slt {
+          &.slt {
             color: #fff;
             text-decoration: none;
           }
           &:hover em,
-          &.z-slt em {
+          &.slt em {
             background: #9b0909;
           }
         }

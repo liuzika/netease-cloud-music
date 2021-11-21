@@ -1,8 +1,8 @@
 <template>
   <div class="hd-container" :style="{ height }">
     <i class="icon-dot" v-if="isIconDot"></i>
-    <h3 v-if="!isLink">
-      <span class="f-ff2" :style="{ fontSize: fSize }">{{ title }}</span>
+    <h3 v-if="!isLink" :style="{ fontSize: fSize ,lineHeight,fontWeight}">
+      <span class="f-ff2">{{ title }}</span>
     </h3>
     <a href="/discover/playlist/" class="tit f-ff2 f-tdn" :style="{ fontSize: fSize }" v-else>{{ title }}</a>
     <slot name="tab"></slot>
@@ -10,12 +10,13 @@
       <a href="/discover/playlist/" class="s-fc3">更多</a>
       <i class="cor s-bg s-bg-6">&nbsp;</i>
     </span>
+    <slot name="customPub"></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DisHeader",
+  name: "PubHeader",
   props: {
     isIconDot: {
       type: Boolean,
@@ -41,6 +42,14 @@ export default {
       type: String,
       default: "33px",
     },
+    lineHeight: {
+      type: String,
+      default: "28px",
+    },
+    fontWeight: {
+      type: String,
+      default: "normal",
+    },
   },
 };
 </script>
@@ -48,7 +57,7 @@ export default {
 <style lang='less'>
 .hd-container {
   height: 33px;
-  padding-right: 10px;
+  // padding-right: 10px;
   background-position: -225px -156px;
   border-bottom: 2px solid #c10d0c;
   .icon-dot {
@@ -59,7 +68,7 @@ export default {
     background-position: -225px -156px;
   }
   .tit,
-  h3 span {
+  h3 {
     float: left;
     font-size: 20px;
     font-weight: normal;
@@ -76,6 +85,7 @@ export default {
   .more {
     float: right;
     margin-top: 9px;
+    margin-right: 10px;
     .cor {
       display: inline-block;
       width: 12px;

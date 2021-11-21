@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import UserRouter from './user'
 
 Vue.use(VueRouter)
 
@@ -8,6 +9,7 @@ const routes = [
     path: '/',
     redirect: '/m'
   },
+  // 发现音乐
   {
     path: '/m',
     component: () => import('@/views/FindMusic/Home.vue'),
@@ -62,12 +64,15 @@ const routes = [
   {
     path: '/download',
     component: () => import('@/views/DownloadPage/DownloadPage.vue')
-  }
+  },
+  // 用户路由
+  ...UserRouter
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkExactActiveClass: 'active',
   routes
 })
 

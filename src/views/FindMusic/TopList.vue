@@ -1,10 +1,10 @@
 <template>
-  <div id="toplist" class="g-bd3 g-bd3-1 f-cb">
-    <div class="g-sd3 g-sd3-1">
-      <div class="n-minelst n-minelst-2">
+  <div class="toplist-container container">
+    <div class="list-left">
+      <div class="minelst">
         <h2 class="f-ff1">云音乐特色榜</h2>
         <ul class="f-cb">
-          <li data-res-id="19723756" data-res-action="href" class="mine z-selected">
+          <li data-res-id="19723756" data-res-action="href" class="mine selected">
             <div class="item f-cb">
               <div class="left">
                 <a class="avatar" href="/discover/toplist?id=19723756">
@@ -418,27 +418,25 @@
         </ul>
       </div>
     </div>
-    <div class="g-mn3">
-      <div class="g-mn3c">
-        <div class="g-wrap">
-          <div class="m-info m-info-rank f-cb">
-            <div class="cover u-cover u-cover-rank"><img src="http://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=150y150"><span class="msk"></span></div>
-            <div class="cnt">
-              <div class="cntc m-info">
-                <div class="hd f-cb">
-                  <h2 class="f-ff2">飙升榜</h2>
-                </div>
-                <div class="user f-cb">
-                  <i class="u-icn u-icn-57"></i><span class="sep s-fc3">最近更新：11月18日</span> <span class="s-fc4">（每天更新）</span>
-                </div>
-                <div class="btns f-cb">
-                  <a href="javascript:;" class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="播放" data-res-type="13" data-res-id="19723756" data-res-action="play" data-res-from="31" data-res-data="19723756"><i><em class="ply"></em>播放</i></a>
-                  <a href="javascript:;" class="u-btni u-btni-add" hidefocus="true" title="添加到播放列表" data-res-type="13" data-res-id="19723756" data-res-action="addto" data-res-from="31" data-res-data="19723756"></a>
-                  <a id="toplist-fav" data-res-id="19723756" data-res-type="13" data-res-action="fav" data-res-data="3859403" class="u-btni u-btni-fav" href="javascript:;"><i>(3859403)</i></a>
-                  <a id="toplist-share" data-res-id="19723756" data-res-type="13" data-res-action="share" data-res-name="飙升榜" data-res-author="网易云音乐" data-res-data="http://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg" class="u-btni u-btni-share" href="javascript:;"><i>(11322)</i></a>
-                  <a data-res-id="19723756" data-res-type="13" data-res-action="download" class="u-btni u-btni-dl" href="javascript:;"><i>下载</i></a>
-                  <a data-res-id="19723756" data-res-action="comment" href="javascript:;" class="u-btni u-btni-cmmt j-cmt"><i>(<span id="comment-count">209253</span>)</i></a>
-                </div>
+    <div class="mn-right">
+      <div class="mn-box">
+        <div class="wrap f-cb">
+          <div class="cover"><img src="http://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=150y150"><span class="msk"></span></div>
+          <div class="cnt">
+            <div class="cntc m-info">
+              <div class="hd f-cb">
+                <h2 class="f-ff2">飙升榜</h2>
+              </div>
+              <div class="user f-cb">
+                <i class="u-icn u-icn-57"></i><span class="sep s-fc3">最近更新：11月18日</span> <span class="s-fc4">（每天更新）</span>
+              </div>
+              <div class="btns f-cb">
+                <a href="javascript:;" class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="播放" data-res-type="13" data-res-id="19723756" data-res-action="play" data-res-from="31" data-res-data="19723756"><i><em class="ply"></em>播放</i></a>
+                <a href="javascript:;" class="u-btni u-btni-add" hidefocus="true" title="添加到播放列表" data-res-type="13" data-res-id="19723756" data-res-action="addto" data-res-from="31" data-res-data="19723756"></a>
+                <a id="toplist-fav" data-res-id="19723756" data-res-type="13" data-res-action="fav" data-res-data="3859403" class="u-btni u-btni-fav" href="javascript:;"><i>(3859403)</i></a>
+                <a id="toplist-share" data-res-id="19723756" data-res-type="13" data-res-action="share" data-res-name="飙升榜" data-res-author="网易云音乐" data-res-data="http://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg" class="u-btni u-btni-share" href="javascript:;"><i>(11322)</i></a>
+                <a data-res-id="19723756" data-res-type="13" data-res-action="download" class="u-btni u-btni-dl" href="javascript:;"><i>下载</i></a>
+                <a data-res-id="19723756" data-res-action="comment" href="javascript:;" class="u-btni u-btni-cmmt j-cmt"><i>(<span id="comment-count">209253</span>)</i></a>
               </div>
             </div>
           </div>
@@ -2899,5 +2897,112 @@ export default {
 };
 </script>
 
-<style>
+<style lang='less'>
+.toplist-container {
+  display: flex;
+  .list-left {
+    width: 239px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #d5d5d5;
+    .minelst {
+      margin-top: 40px;
+      h2 {
+        padding: 0 10px 12px 15px;
+        font-size: 14px;
+        color: #000;
+        &.scd {
+          margin-top: 20px;
+        }
+      }
+      ul li {
+        position: relative;
+        zoom: 1;
+        height: 42px;
+        padding: 10px 0 10px 20px;
+        &:hover {
+          background-color: #f4f2f2;
+        }
+        * {
+          cursor: pointer;
+          vertical-align: middle;
+        }
+        &.selected {
+          background: #e6e6e6;
+        }
+        .item {
+          .left {
+            display: inline;
+            float: left;
+            margin-right: 10px;
+            overflow: hidden;
+            width: 40px;
+          }
+          .name {
+            width: 150px;
+            overflow: hidden;
+            margin-top: 2px;
+            margin-bottom: 8px;
+            a:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mn-right {
+    height: 100%;
+    width: 740px;
+    padding-bottom: 50px;
+    .mn-box {
+      padding: 40px;
+      .wrap {
+        margin-bottom: 40px;
+
+        .cover {
+          float: left;
+          position: relative;
+          height: 150px;
+          margin: 0 -220px 0 0;
+          padding: 3px;
+          border: 1px solid #cccccc;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+          .msk {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: url(~@/assets/img/discover/coverall.png) no-repeat;
+            background-position: -230px -380px;
+            top: 3px;
+            left: 3px;
+          }
+        }
+        .cnt {
+          float: right;
+          width: 100%;
+          .cntc {
+            margin-left: 187px;
+            .hd {
+              margin: 16px 0 4px;
+              position: relative;
+              line-height: 24px;
+              h2 {
+                line-height: 24px;
+                font-size: 20px;
+                font-weight: normal;
+              }
+            }
+            .user {
+              margin: 0 0 20px;
+              line-height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

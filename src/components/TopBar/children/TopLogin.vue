@@ -1,24 +1,45 @@
 <template>
-  <div class="m-tophead f-pr j-tflag" id="auto-id-QGPv3JFlg8lwAI9W">
+  <div class="m-tophead f-pr j-tflag">
     <!-- 登录按钮 -->
-    <a hidefocus="true" href="#" class="link s-fc3">登录</a>
+    <a hidefocus="true" href="#" class="link s-fc3" v-if="!isLogin">登录</a>
     <!-- 已登录状态 -->
-    <div class="head f-fl f-pr" style="display: none;"><img src="https://p1.music.126.net/pVptwn0wRkMLLmjIdtGr7Q==/109951165973320454.jpg?param=30y30"><a href="/user/home?id=330293944" class="mask"></a><i class="m-topmsg f-pa j-uflag">20</i></div><a href="/user/home?id=330293944" class="name f-thide f-fl f-tdn f-hide">二笑倾心丶</a>
+    <div class="head f-pr" v-else>
+      <img src="https://p1.music.126.net/pVptwn0wRkMLLmjIdtGr7Q==/109951165973320454.jpg?param=30y30" />
+      <i class="m-topmsg f-pa">20</i>
+    </div>
+    <!-- <a href="/user/home?id=330293944" class="name f-thide f-fl f-tdn f-hide"
+      >二笑倾心丶</a
+    > -->
     <!-- 用户菜单 -->
-    <div class="m-tlist m-tlist-lged j-uflag" style="display: none;">
+    <div class="m-tlist m-tlist-lged" style="display: block">
       <ul class="f-cb lb mg">
-        <li><a hidefocus="true" class="itm-1" href="/user/home?id=330293944"><i class="icn icn-hm"></i><em>我的主页</em></a></li>
-        <li><a href="/msg/#/private" class="itm-2"><i class="icn icn-msg"></i><em>我的消息</em><span class="m-topmsg f-pa j-uflag">20</span></a></li>
-        <li><a href="/user/level" class="itm-2"><i class="icn icn-lv"></i><em>我的等级</em></a></li>
-        <li><a href="/member" class="itm-2"><i class="icn icn-mbr"></i><em>VIP会员</em></a></li>
+        <li>
+          <router-link class="itm-1" to="/user/home?id=330293944"><i class="icn icn-hm"></i><em>我的主页</em></router-link>
+        </li>
+        <li>
+          <router-link to="/user/msg" class="itm-2"><i class="icn icn-msg"></i><em>我的消息</em><span class="m-topmsg f-pa">20</span></router-link>
+        </li>
+        <li>
+          <router-link to="/user/level" class="itm-2"><i class="icn icn-lv"></i><em>我的等级</em></router-link>
+        </li>
+        <li>
+          <router-link to="/user/member" class="itm-2"><i class="icn icn-mbr"></i><em>VIP会员</em></router-link>
+        </li>
       </ul>
       <ul class="f-cb ltb mg">
-        <li><a hidefocus="true" class="itm-2" href="/user/update"><i class="icn icn-st"></i><em>个人设置</em></a></li>
-        <li><a hidefocus="true" class="itm-2" href="/login?targetUrl=%2Fst/userbasic/#/nameverify" target="_blank"><i class="icn icn-verify"></i><em>实名认证</em></a></li>
+        <li>
+          <router-link class="itm-2" to="/user/update"><i class="icn icn-st"></i><em>个人设置</em></router-link>
+        </li>
+        <li>
+          <a hidefocus="true" class="itm-2" href="/login?targetUrl=%2Fst/userbasic/#/nameverify" target="_blank"><i class="icn icn-verify"></i><em>实名认证</em></a>
+        </li>
       </ul>
       <ul class="f-cb lt">
-        <li><a hidefocus="true" class="itm-3" href="#"><i class="icn icn-ex"></i><em>退出</em></a></li>
-      </ul><i class="arr"></i>
+        <li>
+          <a hidefocus="true" class="itm-3" href="#"><i class="icn icn-ex"></i><em>退出</em></a>
+        </li>
+      </ul>
+      <i class="arr"></i>
     </div>
   </div>
 </template>
@@ -26,15 +47,20 @@
 <script>
 export default {
   name: "TopLogin",
+  data() {
+    return {
+      isLogin: true,
+    };
+  },
 };
 </script>
 
 <style lang='less'>
 .m-tophead {
   float: right;
-  height: 45px;
-  margin: 19px 0 0 20px;
-  padding: 0 22px 0 0;
+  height: 30px;
+  margin: 9px 3px 0 15px;
+  padding: 10px 15px 5px 5px;
   background-position: right -47px;
   background-image: none;
   &:hover .link {
@@ -92,13 +118,16 @@ export default {
   }
   .m-tlist {
     position: absolute;
-    top: 38px;
-    right: -43px;
+    top: 50px;
+    right: -55px;
     width: 158px;
     background: #2b2b2b;
     border: 1px solid #202020;
     box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
     border-radius: 4px;
+    z-index: 9999;
+    overflow: hidden;
+
     .ltb {
       border: 1px solid #232323;
       border-width: 1px 0;

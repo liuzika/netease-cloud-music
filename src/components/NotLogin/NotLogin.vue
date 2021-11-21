@@ -1,5 +1,5 @@
 <template>
-  <div class="nl-container">
+  <div class="nl-container container">
     <!-- 未登录 我的音乐 -->
     <div class="n-pglg" v-if="mORp">
       <div class="pic">
@@ -30,13 +30,6 @@ export default {
 
 <style lang='less'>
 .nl-container {
-  width: 980px;
-  min-height: 700px;
-  _height: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #d3d3d3;
-  border-width: 0 1px;
   .n-pglg {
     width: 807px;
     height: 268px;
