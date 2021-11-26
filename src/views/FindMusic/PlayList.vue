@@ -1,17 +1,18 @@
 <template>
-  <div class="playlist-container container">
-    <div class="playlist-wrap p-pl f-pr">
-      <PubHeader title="全部" fSize='24px' height="40px" :isMore="false"></PubHeader>
-      <div class="u-title f-cb">
-        <h3><span class="f-ff2 d-flag">全部</span><a href="javascript:;" class="u-btn2 u-btn2-1 menu d-flag" id="cateToggleLink"><i>选择分类<em class="u-icn u-icn-38"></em></i></a></h3>
-        <div class="u-btn f-fr u-btn-hot d-flag">
+  <div class="playlist-container container" @click="isCateList=false">
+    <div class="playlist-wrap f-pr">
+      <PubHeader title="全部" fSize='24px' height="40px">
+        <a href="javascript:;" class="cateToggleLink menu" slot="left" @click.stop="showCateList">
+          选择分类<em class="open-arrow"></em>
+        </a>
+
+        <div class="btn-hot f-fr" slot="right">
           <a href="/discover/playlist/?order=hot" class="a1" data-order="hot">热门</a>
         </div>
-      </div>
-      <div id="cateListBox" class="n-sltlyr d-flag" style="left:0;">
-        <div class="hd"><i class="icn"></i></div>
+      </PubHeader>
+      <div class="cateListBox d-flag" v-if="isCateList" @click.stop>
         <div class="bd">
-          <h3><a href="/discover/playlist/" class="j-flag u-btn u-btn-g s-fc1" data-cat="全部"><em>全部风格</em></a></h3>
+          <h3><a href="/discover/playlist/" class="btn s-fc1" data-cat="全部"><em>全部风格</em></a></h3>
           <dl class="f-cb">
             <dt><i class="u-icn u-icn-71"></i>语种</dt>
             <dd>
@@ -106,7 +107,6 @@
             </dd>
           </dl>
         </div>
-        <div class="ft"></div>
       </div>
       <ul class="cvrlst">
         <li v-for="i in 35" :key="i">
@@ -143,6 +143,16 @@ export default {
     PubHeader,
     SongSheet,
   },
+  data() {
+    return {
+      isCateList: false,
+    };
+  },
+  methods: {
+    showCateList() {
+      this.isCateList = !this.isCateList;
+    },
+  },
 };
 </script>
 
@@ -150,11 +160,161 @@ export default {
 .playlist-container {
   .playlist-wrap {
     padding: 40px;
+    .cateToggleLink {
+      float: left;
+      font-size: 12px;
+      font-weight: normal;
+      margin: 2px 0 0 12px;
+      width: 88px;
+      height: 28px;
+      border: 1px solid #c4c4c4;
+      border-radius: 3px;
+      background: linear-gradient(#ffffff, #f1f1f1);
+      line-height: 28px;
+      text-align: center;
+      color: #0c73c2;
+      .open-arrow {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        width: 8px;
+        height: 5px;
+        background: url(~@/assets/img/commonbg/icon.png) no-repeat 0 9999px;
+        background-position: -70px -543px;
+      }
+      &:hover {
+        text-decoration: none;
+        border-color: #dedddd;
+        background: linear-gradient(#ffffff, #fdfdfd);
+      }
+    }
+    .btn-hot {
+      width: 46px;
+      height: 29px;
+      .a1 {
+        display: block;
+        color: #fff;
+        text-align: center;
+        width: 44px;
+        height: 27px;
+        line-height: 29px;
+        border: 1px solid #a80909;
+        border-radius: 3px;
+        background: linear-gradient(#d20c0d, #a80909);
+      }
+    }
+    .cateListBox {
+      position: absolute;
+      top: 86px;
+      left: 10px;
+      z-index: 5;
+      width: 700px;
+      background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid #bebebe;
+      box-shadow: 0 0 10px 2px #bebebe;
+      .bd {
+        width: 100%;
+        h3 {
+          height: 58px;
+          padding-left: 26px;
+          border-bottom: 1px solid #e6e6e6;
+          font-weight: normal;
+          .btn {
+            display: inline-block;
+            margin-top: 20px;
+            width: 75px;
+            height: 26px;
+            background-position: 0 -64px;
+            text-align: center;
+            line-height: 26px;
+            border: 1px solid #bebebe;
+            border-radius: 3px;
+            background: linear-gradient(#ffffff, #f8f8f8);
+          }
+        }
+        dl:last-of-type dd {
+          padding-bottom: 25px;
+        }
+        dt {
+          float: left;
+          display: inline;
+          width: 70px;
+          margin: 0 -100px 0 26px;
+          padding-top: 15px;
+          border-right: 1px solid #e6e6e6;
+          font-weight: bold;
+
+          .u-icn {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            width: 24px;
+            height: 24px;
+            background: url(~@/assets/img/commonbg/icon.png) no-repeat 0 9999px;
+            &.u-icn-71 {
+              width: 23px;
+              height: 23px;
+              background-position: -20px -735px;
+            }
+            &.u-icn-6 {
+              background-position: -0px -60px;
+            }
+            &.u-icn-7 {
+              background-position: -0px -88px;
+            }
+            &.u-icn-8 {
+              background-position: -0px -117px;
+            }
+            &.u-icn-8 {
+              background-position: -0px -117px;
+            }
+            &.u-icn-9 {
+              background-position: -0px -141px;
+            }
+          }
+        }
+        dd {
+          margin-left: 96px;
+          padding: 16px 15px 0 15px;
+          border-left: 1px solid #e6e6e6;
+          line-height: 24px;
+
+          a {
+            white-space: nowrap;
+            &.z-slt {
+              background: #a7a7a7;
+              color: #fff;
+              padding: 2px 6px;
+            }
+          }
+          .line {
+            margin: 0 10px 0 10px;
+            color: #d8d8d8;
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 125px;
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        transform: rotate(45deg);
+        border: 1px solid #bebebe;
+        border-bottom: none;
+        border-right: none;
+      }
+    }
     .cvrlst {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       margin-left: -40px;
+      margin-top: 30px;
       li {
         width: 140px;
         height: 188px;

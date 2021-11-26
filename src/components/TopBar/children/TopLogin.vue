@@ -11,7 +11,7 @@
       >二笑倾心丶</a
     > -->
     <!-- 用户菜单 -->
-    <div class="m-tlist m-tlist-lged" style="display: block">
+    <div class="m-tlist m-tlist-lged" style="display: none">
       <ul class="f-cb lb mg">
         <li>
           <router-link class="itm-1" to="/user/home?id=330293944"><i class="icn icn-hm"></i><em>我的主页</em></router-link>
@@ -49,7 +49,7 @@ export default {
   name: "TopLogin",
   data() {
     return {
-      isLogin: true,
+      isLogin: false, // 是否已登录
     };
   },
 };

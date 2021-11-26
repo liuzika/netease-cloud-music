@@ -32,7 +32,11 @@ const routes = [
       },
       {
         path: 'djradio',
-        component: () => import('@/views/FindMusic/AnchorStation.vue'),
+        component: () => import('@/views/FindMusic/DjRadio/DjRadio.vue'),
+        children: [
+          { path: '', component: () => import('@/views/FindMusic/DjRadio/DjHome.vue') },
+          { path: 'category', component: () => import('@/views/FindMusic/DjRadio/Category.vue') }
+        ]
       },
       {
         path: 'artist',

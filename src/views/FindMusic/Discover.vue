@@ -9,8 +9,10 @@
         <div class="g-mn1c">
           <div class="g-wrap3">
             <div class="n-rcmd">
-              <PubHeader :isIconDot="true" :isLink="true" title="热门推荐">
-                <div class="tab" slot="tab">
+              <PubHeader :isIconDot="true" title="热门推荐">
+                <a href="/discover/playlist/" class="tit f-ff2 f-tdn" slot="title">热门推荐</a>
+
+                <div class="tab" slot="left">
                   <a href="/discover/playlist/?cat=%E5%8D%8E%E8%AF%AD" class="s-fc3">华语</a>
                   <span class="line">|</span>
                   <a href="/discover/playlist/?cat=%E6%B5%81%E8%A1%8C" class="s-fc3">流行</a>
@@ -21,6 +23,10 @@
                   <span class="line">|</span>
                   <a href="/discover/playlist/?cat=%E7%94%B5%E5%AD%90" class="s-fc3">电子</a>
                 </div>
+                <span class="more-btn" slot="right">
+                  <a href="/discover/playlist/" class="s-fc3">更多</a>
+                  <i class="cor s-bg s-bg-6">&nbsp;</i>
+                </span>
               </PubHeader>
               <ul class="m-cvrlst f-cb">
                 <li>
@@ -161,7 +167,13 @@
               <div class="j-flag f-hide" id="auto-id-Z5dVOiU4LqMBTni3"></div>
             </div>
             <div class="n-new">
-              <PubHeader title="新碟上架" :isLink="true" :isIconDot="true"></PubHeader>
+              <PubHeader title="新碟上架" :isIconDot="true">
+                <a href="/discover/album/" class="tit f-ff2 f-tdn" slot="title">新碟上架</a>
+                <span class="more-btn" slot="right">
+                  <a href="/discover/playlist/" class="s-fc3">更多</a>
+                  <i class="cor s-bg s-bg-6">&nbsp;</i>
+                </span>
+              </PubHeader>
               <div class="n-disk">
                 <div class="inner" id="album-roller">
                   <a hidefocus="true" href="#" class="click-flag pre s-bg s-bg-7 f-tdn">&nbsp;</a>
@@ -182,7 +194,13 @@
               </div>
             </div>
             <div class="n-bill">
-              <PubHeader title="榜单" :isLink="true" :isIconDot="true"></PubHeader>
+              <PubHeader title="榜单" :isIconDot="true">
+                <a href="/discover/toplist" class="tit f-ff2 f-tdn" slot="title">榜单</a>
+                <span class="more-btn" slot="right">
+                  <a href="/discover/playlist/" class="s-fc3">更多</a>
+                  <i class="cor s-bg s-bg-6">&nbsp;</i>
+                </span>
+              </PubHeader>
               <div class="n-bilst" id="top-flag">
                 <dl class="blk">
                   <dt class="top">
@@ -716,6 +734,22 @@ export default {
       border-right: 1px solid #d4d4d4;
       .g-wrap3 {
         padding: 20px 20px 40px;
+        .tit:hover {
+          text-decoration: none;
+        }
+        .more-btn {
+          float: right;
+          margin-top: 9px;
+          margin-right: 10px;
+          .cor {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-left: 4px;
+            vertical-align: middle;
+            background-position: 0 -240px;
+          }
+        }
         // 推荐
         .n-rcmd {
           .m-cvrlst {

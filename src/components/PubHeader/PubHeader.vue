@@ -1,16 +1,23 @@
 <template>
   <div class="hd-container" :style="{ height }">
+    <!-- 前面图标 -->
     <i class="icon-dot" v-if="isIconDot"></i>
-    <h3 v-if="!isLink" :style="{ fontSize: fSize ,lineHeight,fontWeight}">
-      <span class="f-ff2">{{ title }}</span>
+
+    <!-- title 使用 a 还是 span -->
+
+    <h3 :style="{ fontSize: fSize, lineHeight, fontWeight }">
+      <slot name="title">
+        <span class="f-ff2">{{ title }}</span>
+      </slot>
     </h3>
-    <a href="/discover/playlist/" class="tit f-ff2 f-tdn" :style="{ fontSize: fSize }" v-else>{{ title }}</a>
-    <slot name="tab"></slot>
-    <span class="more" v-if="isMore">
-      <a href="/discover/playlist/" class="s-fc3">更多</a>
-      <i class="cor s-bg s-bg-6">&nbsp;</i>
-    </span>
-    <slot name="customPub"></slot>
+
+    <!-- <a href="/discover/playlist/" class="tit f-ff2 f-tdn" :style="{ fontSize: fSize,lineHeight }">{{ title }}</a> -->
+
+    <!-- title 左边插槽 -->
+    <slot name="left"></slot>
+
+    <!-- 最右插槽 -->
+    <slot name="right"></slot>
   </div>
 </template>
 
@@ -21,14 +28,6 @@ export default {
     isIconDot: {
       type: Boolean,
       default: false,
-    },
-    isLink: {
-      type: Boolean,
-      default: false,
-    },
-    isMore: {
-      type: Boolean,
-      default: true,
     },
     title: {
       type: String,
@@ -57,7 +56,6 @@ export default {
 <style lang='less'>
 .hd-container {
   height: 33px;
-  // padding-right: 10px;
   background-position: -225px -156px;
   border-bottom: 2px solid #c10d0c;
   .icon-dot {
@@ -74,25 +72,15 @@ export default {
     font-weight: normal;
     line-height: 28px;
   }
+  a:hover {
+    text-decoration: underline;
+  }
   .tab {
     float: left;
     margin: 7px 0 0 20px;
     .line {
       margin: 0 10px;
       color: #ccc;
-    }
-  }
-  .more {
-    float: right;
-    margin-top: 9px;
-    margin-right: 10px;
-    .cor {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-left: 4px;
-      vertical-align: middle;
-      background-position: 0 -240px;
     }
   }
 }

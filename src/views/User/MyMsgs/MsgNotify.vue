@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PubHeader title="通知" :isMore='false' fSize='14px' height='35px' lineHeight='35px' fontWeight='700'></PubHeader>
+    <PubHeader title="通知" fSize='14px' height='35px' lineHeight='35px' fontWeight='700'></PubHeader>
     <div v-if="isNotify">通知</div>
     <NoMsg text='暂时还没收到通知' v-else></NoMsg>
   </div>

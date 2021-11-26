@@ -1,6 +1,6 @@
 <template>
   <div class="private-container">
-    <PubHeader title="私信" :isMore='false' fSize='14px' height='35px' lineHeight='35px' fontWeight='700'><a href="#" class="mail-btn" slot="customPub">发新私信</a></PubHeader>
+    <PubHeader title="私信" fSize='14px' height='35px' lineHeight='35px' fontWeight='700'><a href="#" class="mail-btn" slot="customPub">发新私信</a></PubHeader>
     <div class="msgnt n-msgnt-1 n-msgnt-hvr" v-if="isPrivate">
       <div class="item f-cb" data-id="9003" data-noticeaccountflag="false" data-nickname="云音乐小秘书" data-count="13">
         <div class="ava f-pr">

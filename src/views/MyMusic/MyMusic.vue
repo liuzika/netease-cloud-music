@@ -1,7 +1,7 @@
 <template>
-  <div class="music">
+  <div class="music-contaner container">
     <!-- 未登录显示 -->
-    <NotLogin :mORp='true'></NotLogin>
+    <NotLogin :showWhich='music'></NotLogin>
   </div>
 </template>
 

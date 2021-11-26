@@ -293,6 +293,7 @@ export default {
             width: 295px;
             font-size: 12px;
             line-height: 20px;
+            background-color: #fff;
             border: 1px solid #c6c6c6;
             border-radius: 3px;
             box-shadow: 0 0 5px 2px #e7e7e7;
